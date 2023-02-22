@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="16x16" href="/public/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="32x32" href="/public/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="70x70" href="/public/mstile-70x70.png">
+    <link rel="apple-touch-icon" sizes="150x150" href="/public/mstile-150x150.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="310x310" href="/public/mstile-310x310.png">
+    <link rel="manifest" href="/public/site.webmanifest">
+    <link rel="mask-icon" href="/public/safari-pinned-tab.svg" color="#5bbad5">
+
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coinmango</title>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+      } else {
+          document.documentElement.classList.remove('dark')
+      }
+  </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
