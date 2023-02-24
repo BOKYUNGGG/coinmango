@@ -2,9 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import App from './App'
 import './index.css'
+import App from './App'
 import Home from './pages/home'
+import Detail from './pages/coin/coin'
+import Price from './pages/coin/price'
+import Chart from './pages/coin/chart'
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter([
@@ -18,7 +21,17 @@ const router = createBrowserRouter([
       },
       {
         path: ":coinId",
-        element : <h1>CoinId</h1>
+        element : <Detail/>,
+        children : [
+          {
+            path : "price",
+            element : <Price />
+          },
+          {
+              path : "chart",
+              element : <Chart />
+          }
+        ]
       }
     ]
   }
